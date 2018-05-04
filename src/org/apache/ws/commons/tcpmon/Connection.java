@@ -433,6 +433,10 @@ class Connection extends Thread {
                 listener.tableModel.setValueAt(
                         TCPMon.getMessage("done00", "Done"),
                         1 + index, TCPMon.STATE_COLUMN);
+
+                // write to external tool
+                Util.writeFile("tcpmon-inputText", inputText.getText());
+                Util.writeFile("tcpmon-outputText", outputText.getText());
             }
 
         } catch (Exception e) {
